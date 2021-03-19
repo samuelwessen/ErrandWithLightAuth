@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "TJWxPkiFc9g8wyhN3fivu00QOg9qmqDCCW52oneqx6W4RW4r1qRW+8/gfzFKZ5FxrcA/dCmflC2wWZK8RnzJsg==",
+  "dgSpecHash": "aijEI2M3LTOOMF2gPDjBRlWpHAY8r8lV/Vo0aIHwrRVkY/ngs5wo5VvomRubsjAxVc1y665QMWjWBDf0+0ORJg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj",
+  "projectFilePath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Samuel\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Samuel\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\Samuel\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Samuel\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

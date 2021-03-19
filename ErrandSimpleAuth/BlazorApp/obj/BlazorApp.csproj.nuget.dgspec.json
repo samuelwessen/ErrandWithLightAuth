@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\BlazorApp\\BlazorApp.csproj": {}
+    "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\BlazorApp\\BlazorApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\BlazorApp\\BlazorApp.csproj": {
+    "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\BlazorApp\\BlazorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\BlazorApp\\BlazorApp.csproj",
+        "projectUniqueName": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\BlazorApp\\BlazorApp.csproj",
         "projectName": "BlazorApp",
-        "projectPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\BlazorApp\\BlazorApp.csproj",
+        "projectPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\BlazorApp\\BlazorApp.csproj",
         "packagesPath": "C:\\Users\\Samuel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\BlazorApp\\obj\\",
+        "outputPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\BlazorApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Samuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj": {
-                "projectPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj"
+              "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj": {
+                "projectPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj"
               }
             }
           }
@@ -56,6 +56,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             },
             "System.Net.Http.Json": {
               "target": "Package",
@@ -92,14 +96,14 @@
         }
       }
     },
-    "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj": {
+    "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj",
         "projectName": "SharedLibrary",
-        "projectPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj",
+        "projectPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj",
         "packagesPath": "C:\\Users\\Samuel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\SharedLibrary\\obj\\",
+        "outputPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\SharedLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Samuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -133,6 +137,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [

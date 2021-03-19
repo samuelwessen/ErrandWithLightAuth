@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\ErrandWebApi\\ErrandWebApi.csproj": {}
+    "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\ErrandWebApi\\ErrandWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\ErrandWebApi\\ErrandWebApi.csproj": {
+    "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\ErrandWebApi\\ErrandWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\ErrandWebApi\\ErrandWebApi.csproj",
+        "projectUniqueName": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\ErrandWebApi\\ErrandWebApi.csproj",
         "projectName": "ErrandWebApi",
-        "projectPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\ErrandWebApi\\ErrandWebApi.csproj",
+        "projectPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\ErrandWebApi\\ErrandWebApi.csproj",
         "packagesPath": "C:\\Users\\Samuel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\ErrandWebApi\\obj\\",
+        "outputPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\ErrandWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Samuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj": {
-                "projectPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj"
+              "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj": {
+                "projectPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj"
               }
             }
           }
@@ -44,6 +44,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.4, )"
@@ -89,14 +93,14 @@
         }
       }
     },
-    "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj": {
+    "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj",
         "projectName": "SharedLibrary",
-        "projectPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj",
+        "projectPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\SharedLibrary\\SharedLibrary.csproj",
         "packagesPath": "C:\\Users\\Samuel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthLocalSession\\ErrandSimpleAuth\\SharedLibrary\\obj\\",
+        "outputPath": "C:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\SharedLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Samuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -130,6 +134,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [

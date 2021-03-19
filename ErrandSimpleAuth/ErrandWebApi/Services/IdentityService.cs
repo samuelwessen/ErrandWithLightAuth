@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using SharedLibrary.Entities;
 using SharedLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -50,57 +51,7 @@ namespace ErrandWebApi.Services
             }
 
             return false;
-        }
-
-        public async Task<SignInResponse> SignInAsync(string email, string password)
-        {
-            try
-            {
-                var serviceworker = await _context.ServiceWorkers.FirstOrDefaultAsync(serviceworker => serviceworker.Email == email);
-
-                if (serviceworker != null)
-                {
-                    try
-                    {
-                        if (serviceworker.ValidatePasswordHash(password))
-                        {
-                            var tokenHandler = new JwtSecurityTokenHandler();
-                            var _secretKey = Encoding.UTF8.GetBytes(_configuration.GetSection("SecretKey").Value);
-                            var expireDate = DateTime.Now.AddHours(5);
-
-                            var tokenDescriptor = new SecurityTokenDescriptor
-                            {
-                                Subject = new ClaimsIdentity(new Claim[]
-                                {
-                                    new Claim("ServiceWorkerId", serviceworker.Id.ToString()),
-                                    new Claim("Expires", expireDate.ToString())
-                                }),
-                                Expires = expireDate,
-                                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(_secretKey), SecurityAlgorithms.HmacSha512Signature)
-                            };
-
-                            var _accessToken = tokenHandler.WriteToken(tokenHandler.CreateToken(tokenDescriptor));
-
-
-                            return new SignInResponse
-                            {
-                                Succeded = true,
-                                Result = new SignInResponseResult
-                                {
-                                    Id = serviceworker.Id,
-                                    Email = serviceworker.Email,
-                                    AccessToken = _accessToken
-                                }
-                            };
-                        }
-                    }
-                    catch { }
-                }
-            }
-            catch { }
-
-            return new SignInResponse { Succeded = false };
-
-        }
+        }       
+            
     }
 }

@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ErrandWebApi.Data
+namespace SharedLibrary.Entities
 {
     public class ServiceWorker
     {
@@ -16,7 +14,7 @@ namespace ErrandWebApi.Data
         public int Id { get; set; }
 
         [Required]
-        [Column(TypeName ="nvarchar(50)")]
+        [Column(TypeName = "nvarchar(50)")]
         public string FirstName { get; set; }
 
         [Required]

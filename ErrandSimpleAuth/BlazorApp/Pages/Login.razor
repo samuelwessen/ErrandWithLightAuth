@@ -3,23 +3,29 @@
 <h3>Login</h3>
 
 
-<EditForm Model="logInModel" OnSubmit="@LogInUser">
-    <button type="submit" class="btn btn-secondary">Login</button>
+<EditForm Model="logInModel" class="col-6" OnSubmit="@LogInUser">
+    <div class="form-group">
+        <InputText type="text" id="email" class="form-control" placeholder="Email" @bind-Value="logInModel.Email" required/>        
+    </div>
+    <div class="form-group">
+        <InputText type="password" id="password" class="form-control" placeholder="Password" @bind-Value="logInModel.Password" required />
+    </div>
+    <div class="form-group">
+        <button class="btn btn-secondary" type="submit">Login</button>
+    </div>
+    
 </EditForm>
 
 
 
 
 @code {
-    private LogInModel logInModel { get; set; }
-    private bool token = false;
+    private LogInModel logInModel { get; set; }    
 
     private async Task LogInUser()
     {
-        //token = bool.Parse(await Http.PostAsync<string>("https:/minurl/api/users/login", model));
-        token = true;
-
-        await sessionStorage.SetItemAsync<string>("auth", token.ToString());
+        var response = await Http.PostAsJsonAsync<LogInModel>("https://localhost:44308/api/ServiceWorkers/login", logInModel);
+        await sessionStorage.SetItemAsync<string>("auth", await response.Content.ReadAsStringAsync());
         NavManager.NavigateTo("/");
     }
 

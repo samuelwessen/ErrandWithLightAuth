@@ -1,4 +1,4 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthLocalSession\ErrandSimpleAuth\BlazorApp\bin\Debug\net5.0\wwwroot\" />
-  <ContentRoot BasePath="/" Path="C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthLocalSession\ErrandSimpleAuth\BlazorApp\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/" Path="C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\obj\Debug\net5.0\scopedcss\bundle\" />
 </StaticWebAssets>

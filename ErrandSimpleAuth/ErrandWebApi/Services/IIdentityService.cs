@@ -11,6 +11,6 @@ namespace ErrandWebApi.Services
         Task<bool> CreateServiceWorkerAsync(SignUpModel model);
 
 
-        Task<SignInResponse> SignInAsync(string email, string password);
+        
     }
 }
