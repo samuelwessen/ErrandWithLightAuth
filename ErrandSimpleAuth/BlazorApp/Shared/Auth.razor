@@ -1,0 +1,19 @@
+﻿
+@code {
+    private bool authenticated = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            authenticated = bool.Parse(await sessionStorage.GetItemAsync<string>("auth"));
+        }
+        catch
+        {
+            authenticated = false;
+        }
+
+        if (!authenticated)
+            NavManager.NavigateTo("/login");
+    }
+}

@@ -1,0 +1,31 @@
+﻿@page "/login"
+
+<h3>Login</h3>
+
+
+<EditForm Model="logInModel" OnSubmit="@LogInUser">
+    <button type="submit" class="btn btn-secondary">Login</button>
+</EditForm>
+
+
+
+
+@code {
+    private LogInModel logInModel { get; set; }
+    private bool token = false;
+
+    private async Task LogInUser()
+    {
+        //token = bool.Parse(await Http.PostAsync<string>("https:/minurl/api/users/login", model));
+        token = true;
+
+        await sessionStorage.SetItemAsync<string>("auth", token.ToString());
+        NavManager.NavigateTo("/");
+    }
+
+    protected override void OnInitialized()
+    {
+        logInModel = new LogInModel();
+    }
+
+}
