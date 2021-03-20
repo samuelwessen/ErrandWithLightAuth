@@ -26,6 +26,7 @@ a, .btn-link {
     outline: 1px solid red;
 }
 
+
 .validation-message {
     color: red;
 }
@@ -48,3 +49,5 @@ a, .btn-link {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+

@@ -41,68 +41,55 @@
         }
       },
       {
-        "HashCode": -1176967935,
+        "HashCode": 426572682,
         "Kind": "Components.Component",
-        "Name": "BlazorApp.Pages.Counter",
+        "Name": "BlazorApp.Pages.EditErrand",
         "AssemblyName": "BlazorApp",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Counter"
+            "TagName": "EditErrand"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "Id"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BlazorApp.Pages.Counter"
+          "Common.TypeName": "BlazorApp.Pages.EditErrand"
         }
       },
       {
-        "HashCode": -705743298,
+        "HashCode": 1972167179,
         "Kind": "Components.Component",
-        "Name": "BlazorApp.Pages.Counter",
+        "Name": "BlazorApp.Pages.EditErrand",
         "AssemblyName": "BlazorApp",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "BlazorApp.Pages.Counter"
+            "TagName": "BlazorApp.Pages.EditErrand"
           }
         ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BlazorApp.Pages.Counter",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1367510939,
-        "Kind": "Components.Component",
-        "Name": "BlazorApp.Pages.FetchData",
-        "AssemblyName": "BlazorApp",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
+        "BoundAttributes": [
           {
-            "TagName": "FetchData"
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "Id"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BlazorApp.Pages.FetchData"
-        }
-      },
-      {
-        "HashCode": 1934245711,
-        "Kind": "Components.Component",
-        "Name": "BlazorApp.Pages.FetchData",
-        "AssemblyName": "BlazorApp",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "BlazorApp.Pages.FetchData"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BlazorApp.Pages.FetchData",
+          "Common.TypeName": "BlazorApp.Pages.EditErrand",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -169,6 +156,72 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "BlazorApp.Pages.Login",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 676555462,
+        "Kind": "Components.Component",
+        "Name": "BlazorApp.Pages.Signup",
+        "AssemblyName": "BlazorApp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Signup"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BlazorApp.Pages.Signup"
+        }
+      },
+      {
+        "HashCode": -771084618,
+        "Kind": "Components.Component",
+        "Name": "BlazorApp.Pages.Signup",
+        "AssemblyName": "BlazorApp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "BlazorApp.Pages.Signup"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BlazorApp.Pages.Signup",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -279797196,
+        "Kind": "Components.Component",
+        "Name": "BlazorApp.Pages.Errands",
+        "AssemblyName": "BlazorApp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Errands"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BlazorApp.Pages.Errands"
+        }
+      },
+      {
+        "HashCode": -126080088,
+        "Kind": "Components.Component",
+        "Name": "BlazorApp.Pages.Errands",
+        "AssemblyName": "BlazorApp",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "BlazorApp.Pages.Errands"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BlazorApp.Pages.Errands",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -13079,18 +13132,28 @@
       "FileKind": "component"
     },
     {
+      "FilePath": "c:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\BlazorApp\\Pages\\EditErrand.razor",
+      "TargetPath": "Pages\\EditErrand.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\BlazorApp\\Pages\\Signup.razor",
+      "TargetPath": "Pages\\Signup.razor",
+      "FileKind": "component"
+    },
+    {
       "FilePath": "c:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\BlazorApp\\Shared\\NavMenu.razor",
       "TargetPath": "Shared\\NavMenu.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\BlazorApp\\Shared\\MainLayout.razor",
-      "TargetPath": "Shared\\MainLayout.razor",
+      "FilePath": "c:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\BlazorApp\\Pages\\Errands.razor",
+      "TargetPath": "Pages\\Errands.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\BlazorApp\\Pages\\FetchData.razor",
-      "TargetPath": "Pages\\FetchData.razor",
+      "FilePath": "c:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\BlazorApp\\Shared\\MainLayout.razor",
+      "TargetPath": "Shared\\MainLayout.razor",
       "FileKind": "component"
     },
     {
@@ -13101,11 +13164,6 @@
     {
       "FilePath": "c:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\BlazorApp\\Pages\\Index.razor",
       "TargetPath": "Pages\\Index.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Samuel\\OneDrive\\Skrivbord\\ErrandApiWIthSessionStorage\\ErrandSimpleAuth\\BlazorApp\\Pages\\Counter.razor",
-      "TargetPath": "Pages\\Counter.razor",
       "FileKind": "component"
     }
   ],

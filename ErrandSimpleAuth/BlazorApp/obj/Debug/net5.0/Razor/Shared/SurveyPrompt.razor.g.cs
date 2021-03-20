@@ -88,6 +88,13 @@ using SharedLibrary.Models;
 #nullable disable
 #nullable restore
 #line 12 "C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\_Imports.razor"
+using SharedLibrary.Entities;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\_Imports.razor"
 using Newtonsoft.Json;
 
 #line default

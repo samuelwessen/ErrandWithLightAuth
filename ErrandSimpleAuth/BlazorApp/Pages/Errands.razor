@@ -4,14 +4,114 @@
 
 <h3> Create a new Errand</h3>
 
+<EditForm Model="createErrand" OnSubmit="@CreateErrandAsync">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Customer name" @bind="createErrand.CustomerName" required />
+    </div>
+    <div class="form-group">
+        <InputSelect @bind-Value="createErrand.ServiceWorkerId" class="form-control">
+            <option selected disabled="disabled">-- Assign a serviceworker --</option>
+            @foreach (var serviceWorker in serviceWorkers)
+            {
+                <option value="@serviceWorker.Id">@serviceWorker.DisplayName</option>
+            }
+        </InputSelect>
+    </div>
+    <div class="form-group">
+        <textarea rows="5" class="form-control" placeholder="Description" @bind="createErrand.Description" required />
+    </div>
+    <div class="form-group">
+        <select class="form-group pt-1 pb-1" @bind="createErrand.Status" required>
+            <option selected disabled="disabled">-- Choose Status --</option>
+            <option value="Pending">Pending</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-secondary" type="submit">Create errand</button>
+    </div>
+</EditForm>
+
+
+<div class="mt-5">
+    @if (errands == null)
+    {
+        <p>No errands found</p>
+    }
+    else
+    {
+        <table class="table errand">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Worker Id</th>
+                        <th>Customer Name</th>
+                        <th>Created Date</th>
+                        <th>Resolved</th>
+                        <th>Status</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var errand in errands)
+                    {
+                        <tr>
+                            <td>@errand.Id</td>
+                            <td>@errand.ServiceWorkerId</td>
+                            <td>@errand.CustomerName</td>
+                            <td>@errand.Created</td>
+                            <td>@errand.Changed</td>
+                            <td>@errand.Status</td>
+                            <td>@errand.Description</td>
+                            <td>
+                                <a href="/EditErrand/@errand.Id" class="btn btn-success">Edit</a>
+                                <a class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+        </table>        
+    }
+</div>
+
+<style>
+    .errand {
+        border: 1px solid gray;
+        border-radius:5px;
+        box-shadow: 5px 3px 3px grey;
+    }
+</style>
 
 
 
 @code {
     private CreateErrandModel createErrand;
+    private IEnumerable<ErrandModel> errands;
+
+    public ServiceWorker serviceWorker { get; set; } = new ServiceWorker();
+    public string ServiceWorkerId { get; set; }
+    public IEnumerable<ServiceWorker> serviceWorkers { get; set; } = new List<ServiceWorker>();
+
 
     private async Task CreateErrandAsync()
     {
         await Http.PostAsJsonAsync<CreateErrandModel>("https://localhost:44308/api/Errands/create", createErrand);
+        createErrand = new CreateErrandModel();
+        await GetAllErrandsAsync();
+    }
+
+
+    public async Task GetAllErrandsAsync()
+    {
+        errands = await Http.GetFromJsonAsync<IEnumerable<ErrandModel>>("https://localhost:44308/api/Errands");
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        createErrand = new CreateErrandModel();
+        serviceWorkers = new List<ServiceWorker>();
+        serviceWorkers = await Http.GetFromJsonAsync<IEnumerable<ServiceWorker>>("https://localhost:44308/api/ServiceWorkers");
+        errands = new List<ErrandModel>();
+        await GetAllErrandsAsync();
     }
 }

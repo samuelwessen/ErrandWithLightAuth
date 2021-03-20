@@ -103,8 +103,8 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/signup")]
-    public partial class Signup : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/editerrand/{Id:int}")]
+    public partial class EditErrand : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -112,23 +112,47 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "c:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\Pages\Signup.razor"
-       
-    private SignUpModel signUpModel;
+#line 44 "c:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\Pages\EditErrand.razor"
+        
+    [Parameter]
+    public int? Id { get; set; }
+    public Errand errand = new Errand();
+    public IEnumerable<ServiceWorker> serviceWorkers { get; set; } = new List<ServiceWorker>();
+    public EditErrandModel model = new EditErrandModel();
 
-
-
-    private async Task SignUpServiceWorkerAsync()
+    protected override async Task OnInitializedAsync()
     {
-        await Http.PostAsJsonAsync<SignUpModel>("https://localhost:44308/api/ServiceWorkers/signup", signUpModel);
-        signUpModel = new SignUpModel();
+        if (Id == null)
+        {
+            NavManager.NavigateTo("Errands");
+        }
+        var response = await Http.GetAsync($"https://localhost:44308/api/Errands/{Id}");
+
+        if (response.IsSuccessStatusCode)
+        {
+            var responseText = await response.Content.ReadAsStringAsync();
+            Errand errand = JsonConvert.DeserializeObject<Errand>(responseText);
+
+            serviceWorkers = new List<ServiceWorker>();
+            serviceWorkers = await Http.GetFromJsonAsync<IEnumerable<ServiceWorker>>("https://localhost:44308/api/ServiceWorkers");
+
+            model.Id = errand.Id;
+            model.Description = errand.Description;                    
+            model.Status = errand.Status;
+            model.CustomerName = errand.CustomerName;                    
+            model.Changed = DateTime.Now;
+        }
+        else
+        {
+            NavManager.NavigateTo("Errands");
+        }
     }
 
-
-    protected override void OnInitialized()
+    private async Task UppdateErrand()
     {
-        signUpModel = new SignUpModel();
-    }
+        await Http.PutAsJsonAsync($"https://localhost:44308/api/Errands/{Id}", model);
+        NavManager.NavigateTo("Errands");
+    } 
 
 #line default
 #line hidden

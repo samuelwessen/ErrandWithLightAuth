@@ -15,7 +15,7 @@ namespace ErrandWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ErrandsController : ControllerBase
     {
         private readonly SqlDbContext _context;
@@ -78,7 +78,7 @@ namespace ErrandWebApi.Controllers
                 if (result.Any())
                 {
                     return Ok(result);
-                }
+                }                
 
                 return NotFound();
             }
@@ -128,14 +128,28 @@ namespace ErrandWebApi.Controllers
 
         // PUT: api/Errands/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutErrand(int id, Errand errand)
+        public async Task<IActionResult> PutErrand(int id, EditErrandModel model)
         {
-            if (id != errand.Id)
+            if (id != model.Id)
             {
                 return BadRequest();
             }
 
+            var errand = await _context.Errands.FindAsync(id);
+            errand.ServiceWorkerId = model.ServiceWorkerId;
+            errand.CustomerName = model.CustomerName;
+            errand.Description = model.Description;
+            errand.Status = model.Status;
+
+            if (model.Status.Contains("Completed"))
+            {
+                errand.Changed = DateTime.Now;
+            }                
+            else
+                model.Changed = null;
+
             _context.Entry(errand).State = EntityState.Modified;
+            
 
             try
             {

@@ -20,7 +20,7 @@ namespace ErrandWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ServiceWorkersController : ControllerBase
     {
         private readonly SqlDbContext _context;

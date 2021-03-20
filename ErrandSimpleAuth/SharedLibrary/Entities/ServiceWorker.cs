@@ -31,6 +31,8 @@ namespace SharedLibrary.Entities
         [Required]
         public byte[] PasswordSalt { get; set; }
 
+        public string DisplayName => $"{FirstName} {LastName}";
+
 
         public void CreatePasswordWithHash(string password)
         {

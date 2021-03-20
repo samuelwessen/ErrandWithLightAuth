@@ -1,0 +1,84 @@
+﻿@page "/editerrand/{Id:int}"
+<Auth />
+
+<h3>Edit</h3>
+
+<div class="row">
+    <EditForm Model="@model" OnValidSubmit="@UppdateErrand">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        
+        <div class="form-group" required>
+            Description: <textarea id="description" rows="4" cols="50" @bind="model.Description" class="form-control" required />
+        </div>
+        <div class="form-group">
+            Customer name: <InputText id="customername" @bind-Value="model.CustomerName" class="form-control" required />
+        </div>
+        
+        
+        <div class="form-group">
+            <select class="form-control selectpicker" @bind="model.Status" required>
+                <option selected disabled value="-1">--Status--</option>
+                <option value="Pending"> Pending</option>
+                <option value="Active"> Active</option>
+                <option value="Completed"> Completed</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <InputSelect id="serviceworker" @bind-Value="model.ServiceWorkerId" class="form-control selectpicker" required>
+                <option selected disabled value="-1">--Serviceworker--</option>
+                @foreach (var serviceWorker in serviceWorkers)
+                {
+                    <option value="@serviceWorker.Id">@serviceWorker.DisplayName</option>
+                }
+            </InputSelect>
+        </div>
+
+        <br />
+
+        <button type="submit" class="btn btn-success">Update</button>
+    </EditForm>
+</div>
+
+@code { 
+    [Parameter]
+    public int? Id { get; set; }
+    public Errand errand = new Errand();
+    public IEnumerable<ServiceWorker> serviceWorkers { get; set; } = new List<ServiceWorker>();
+    public EditErrandModel model = new EditErrandModel();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id == null)
+        {
+            NavManager.NavigateTo("Errands");
+        }
+        var response = await Http.GetAsync($"https://localhost:44308/api/Errands/{Id}");
+
+        if (response.IsSuccessStatusCode)
+        {
+            var responseText = await response.Content.ReadAsStringAsync();
+            Errand errand = JsonConvert.DeserializeObject<Errand>(responseText);
+
+            serviceWorkers = new List<ServiceWorker>();
+            serviceWorkers = await Http.GetFromJsonAsync<IEnumerable<ServiceWorker>>("https://localhost:44308/api/ServiceWorkers");
+
+            model.Id = errand.Id;
+            model.Description = errand.Description;                    
+            model.Status = errand.Status;
+            model.CustomerName = errand.CustomerName;                    
+            model.Changed = DateTime.Now;
+        }
+        else
+        {
+            NavManager.NavigateTo("Errands");
+        }
+    }
+
+    private async Task UppdateErrand()
+    {
+        await Http.PutAsJsonAsync($"https://localhost:44308/api/Errands/{Id}", model);
+        NavManager.NavigateTo("Errands");
+    } 
+}

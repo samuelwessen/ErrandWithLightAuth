@@ -61,7 +61,7 @@ namespace ErrandWebApi.Services
                 {
                     CustomerName = model.CustomerName,
                     ServiceWorkerId = model.ServiceWorkerId,
-                    Created = model.Created,
+                    Created = DateTime.Now,
                     Status = model.Status,
                     Description = model.Description
                 };
