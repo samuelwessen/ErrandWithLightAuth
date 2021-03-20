@@ -1287,3 +1287,7 @@ C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\
 C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\bin\Debug\net5.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
 C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\bin\Debug\net5.0\wwwroot\_framework\Newtonsoft.Json.dll
 C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\obj\Debug\net5.0\build-gz\+hRSV8yb.gz
+C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Signup.razor.g.cs
+C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\obj\Debug\net5.0\Razor\Pages\Signup.razor.g.cs
+C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\obj\Debug\net5.0\RazorDeclaration\Pages\Errands.razor.g.cs
+C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\obj\Debug\net5.0\Razor\Pages\Errands.razor.g.cs

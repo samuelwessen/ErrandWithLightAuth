@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace BlazorApp.Shared
+namespace BlazorApp.Pages
 {
     #line hidden
     using System;
@@ -96,33 +96,13 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
-    public partial class Auth : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class Component : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 2 "C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\Shared\Auth.razor"
-       
-    private string accessToken { get; set; }
-
-    protected override async Task OnInitializedAsync()
-    {
-        try
-        {
-            accessToken = await sessionStorage.GetItemAsync<string>("auth");
-        }
-        catch  { }
-
-        if (accessToken == null)
-            NavManager.NavigateTo("/login");
-    }
-
-#line default
-#line hidden
-#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private Blazored.SessionStorage.ISessionStorageService sessionStorage { get; set; }

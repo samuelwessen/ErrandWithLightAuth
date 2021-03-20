@@ -1,0 +1,17 @@
+﻿@page "/errands"
+<Auth />
+
+
+<h3> Create a new Errand</h3>
+
+
+
+
+@code {
+    private CreateErrandModel createErrand;
+
+    private async Task CreateErrandAsync()
+    {
+        await Http.PostAsJsonAsync<CreateErrandModel>("https://localhost:44308/api/Errands/create", createErrand);
+    }
+}

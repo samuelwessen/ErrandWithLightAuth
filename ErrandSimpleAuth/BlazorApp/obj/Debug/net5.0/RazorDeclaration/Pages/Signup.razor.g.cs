@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace BlazorApp.Shared
+namespace BlazorApp.Pages
 {
     #line hidden
     using System;
@@ -96,7 +96,8 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
-    public partial class Auth : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/signup")]
+    public partial class Signup : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -104,20 +105,22 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 2 "C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\Shared\Auth.razor"
+#line 24 "C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\Pages\Signup.razor"
        
-    private string accessToken { get; set; }
+    private SignUpModel signUpModel;
 
-    protected override async Task OnInitializedAsync()
+
+
+    private async Task SignUpServiceWorkerAsync()
     {
-        try
-        {
-            accessToken = await sessionStorage.GetItemAsync<string>("auth");
-        }
-        catch  { }
+        await Http.PostAsJsonAsync<SignUpModel>("https://localhost:44308/api/ServiceWorkers/signup", signUpModel);
+        signUpModel = new SignUpModel();
+    }
 
-        if (accessToken == null)
-            NavManager.NavigateTo("/login");
+
+    protected override void OnInitialized()
+    {
+        signUpModel = new SignUpModel();
     }
 
 #line default

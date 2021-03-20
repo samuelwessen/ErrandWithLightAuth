@@ -1,0 +1,40 @@
+﻿@page "/signup"
+
+<h3>Signup</h3>
+
+<EditForm Model="signUpModel" class="col-6" OnSubmit="@SignUpServiceWorkerAsync">
+    <div class="form-group">
+        <InputText type="text" id="sw-firstname" class="form-control" placeholder="First name" @bind-Value="signUpModel.FirstName" required />
+    </div>
+    <div class="form-group">
+        <InputText type="text" id="sw-lastname" class="form-control" placeholder="Last name" @bind-Value="signUpModel.LastName" required />
+    </div>
+    <div class="form-group">
+        <InputText type="text" id="sw-email" class="form-control" placeholder="Email" @bind-Value="signUpModel.Email" required />
+    </div>
+    <div class="form-group">
+        <InputText type="password" id="sw-password" class="form-control" placeholder="Password" @bind-Value="signUpModel.Password" required />
+    </div>
+    <div class="form-group">
+        <button class="btn btn-secondary" type="submit">Sign Up</button>
+    </div>
+
+</EditForm>
+
+@code {
+    private SignUpModel signUpModel;
+
+
+
+    private async Task SignUpServiceWorkerAsync()
+    {
+        await Http.PostAsJsonAsync<SignUpModel>("https://localhost:44308/api/ServiceWorkers/signup", signUpModel);
+        signUpModel = new SignUpModel();
+    }
+
+
+    protected override void OnInitialized()
+    {
+        signUpModel = new SignUpModel();
+    }
+}

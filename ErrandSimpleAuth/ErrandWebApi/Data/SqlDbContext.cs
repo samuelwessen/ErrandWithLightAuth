@@ -14,5 +14,6 @@ namespace ErrandWebApi.Data
         }
 
         public DbSet<ServiceWorker> ServiceWorkers { get; set; }
+        public DbSet<Errand> Errands { get; set; }
     }
 }

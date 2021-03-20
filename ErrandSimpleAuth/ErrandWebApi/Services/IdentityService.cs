@@ -51,7 +51,68 @@ namespace ErrandWebApi.Services
             }
 
             return false;
-        }       
-            
+        }
+
+        public async Task<bool> CreateErrandAsync(CreateErrandModel model)
+        {
+            try
+            {
+                var errand = new Errand()
+                {
+                    CustomerName = model.CustomerName,
+                    ServiceWorkerId = model.ServiceWorkerId,
+                    Created = model.Created,
+                    Status = model.Status,
+                    Description = model.Description
+                };
+                _context.Errands.Add(errand);
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+            catch { }
+
+            return false;
+        }
+
+        public async Task<IEnumerable<Errand>> SearchStatusAsync(string status)
+        {
+            IQueryable<Errand> query = _context.Errands;
+
+            if (!string.IsNullOrEmpty(status))
+            {
+                query = query.Where(e => e.Status.Contains(status));
+            }
+
+            return await query.ToListAsync();
+        }
+
+        public async Task<IEnumerable<Errand>> SearchCustomerAsync(string customername)
+        {
+            IQueryable<Errand> query = _context.Errands;
+
+            if (!string.IsNullOrEmpty(customername))
+            {
+                query = query.Where(e => e.CustomerName.Contains(customername));
+            }
+
+            return await query.ToListAsync();
+        }
+
+        public async Task<IEnumerable<Errand>> SearchCreatedDateAsync(string createddate)
+        {
+            IQueryable<Errand> result = _context.Errands;
+
+            if(DateTime.TryParse(createddate, out DateTime pdatetime))
+            {
+                result = result.Where(x => x.Created > pdatetime);
+            }
+            else if (createddate == "latest")
+            {
+                result = result.OrderByDescending(x => x.Created);
+            }
+
+            return await result.ToListAsync();
+        }
     }
 }

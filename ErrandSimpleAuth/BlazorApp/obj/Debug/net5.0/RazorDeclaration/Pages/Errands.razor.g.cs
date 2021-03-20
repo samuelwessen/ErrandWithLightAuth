@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace BlazorApp.Shared
+namespace BlazorApp.Pages
 {
     #line hidden
     using System;
@@ -96,7 +96,8 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
-    public partial class Auth : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/errands")]
+    public partial class Errands : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -104,20 +105,13 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 2 "C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\Shared\Auth.razor"
+#line 10 "C:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\Pages\Errands.razor"
        
-    private string accessToken { get; set; }
+    private CreateErrandModel createErrand;
 
-    protected override async Task OnInitializedAsync()
+    private async Task CreateErrandAsync()
     {
-        try
-        {
-            accessToken = await sessionStorage.GetItemAsync<string>("auth");
-        }
-        catch  { }
-
-        if (accessToken == null)
-            NavManager.NavigateTo("/login");
+        await Http.PostAsJsonAsync<CreateErrandModel>("https://localhost:44308/api/Errands/create", createErrand);
     }
 
 #line default
