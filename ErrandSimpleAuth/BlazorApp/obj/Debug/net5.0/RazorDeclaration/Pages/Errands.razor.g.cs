@@ -112,7 +112,7 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 86 "c:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\Pages\Errands.razor"
+#line 83 "c:\Users\Samuel\OneDrive\Skrivbord\ErrandApiWIthSessionStorage\ErrandSimpleAuth\BlazorApp\Pages\Errands.razor"
        
     private CreateErrandModel createErrand;
     private IEnumerable<ErrandModel> errands;

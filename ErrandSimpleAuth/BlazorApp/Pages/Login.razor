@@ -1,21 +1,23 @@
 ﻿@page "/login"
+<div class="col-6">
+    <h3>Login</h3>
 
-<h3>Login</h3>
 
+    <EditForm Model="logInModel" OnSubmit="@LogInUser">
+        <div class="form-group">
+            <InputText type="text" id="email" class="form-control" placeholder="Email" @bind-Value="logInModel.Email" required />
+        </div>
+        <div class="form-group">
+            <InputText type="password" id="password" class="form-control" placeholder="Password" @bind-Value="logInModel.Password" required />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-secondary col-5" type="submit">Login</button>
+            <a href="/Signup" class="btn btn-secondary col-5">Sign Up</a>
+        </div>
 
-<EditForm Model="logInModel" class="col-6" OnSubmit="@LogInUser">
-    <div class="form-group">
-        <InputText type="text" id="email" class="form-control" placeholder="Email" @bind-Value="logInModel.Email" required/>        
-    </div>
-    <div class="form-group">
-        <InputText type="password" id="password" class="form-control" placeholder="Password" @bind-Value="logInModel.Password" required />
-    </div>
-    <div class="form-group">
-        <button class="btn btn-secondary col-5" type="submit">Login</button>
-        <a href="/Signup" class="btn btn-secondary col-5">Sign Up</a>
-    </div>
-    
-</EditForm>
+    </EditForm>
+</div>
+
 
 
 

@@ -2,9 +2,9 @@
 <Auth />
 
 
-<h3> Create a new Errand</h3>
+<h3 class="col"> Create a new Errand</h3>
 
-<EditForm Model="createErrand" OnSubmit="@CreateErrandAsync">
+<EditForm Model="createErrand" class="col-xl-6" OnSubmit="@CreateErrandAsync">
     <div class="form-group">
         <input type="text" class="form-control" placeholder="Customer name" @bind="createErrand.CustomerName" required />
     </div>
@@ -73,12 +73,9 @@
     }
 </div>
 
+
 <style>
-    .errand {
-        border: 1px solid gray;
-        border-radius:5px;
-        box-shadow: 5px 3px 3px grey;
-    }
+    
 </style>
 
 
